@@ -1,3 +1,4 @@
+//Create a new posts array from
 let posts = [
   {
     title: "Post 1",
@@ -20,16 +21,23 @@ let posts = [
     content: "Content 4",
   },
 ];
+// Create a new listPosts function which lists all posts
+//Listposts function returns a promise
 
 const listPosts = () => {
   return new Promise((resolve, reject) => {
     if (posts) {
+      posts.forEach((post) => {
+        console.log(post.title);
+      });
       resolve(posts);
     } else {
       reject("Bir hata oluştu");
     }
   });
 };
+// Create a new addPost function which adds a new post to posts array
+// addPost function returns a promise
 
 const addPost = (newPost) => {
   return new Promise((resolve, reject) => {
@@ -41,6 +49,12 @@ const addPost = (newPost) => {
     }
   });
 };
+
+// addPost({ title: "Post 5", author: "  Author 5", content: "Content 5" })
+//   .then(listPosts())
+//   .catch((err) => console.log(err));
+//showPosts function uses async/await
+//showPosts function calls listPosts and addPost functions
 
 const showPosts = async () => {
   try {
