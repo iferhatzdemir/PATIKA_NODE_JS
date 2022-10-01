@@ -28,6 +28,7 @@ let showPrimeNumbers = (lowNumber, highNumber) => {
     }
   }
 };
+console.table(showPrimeNumbers(inputArray[0], inputArray[1]));
 
 showPrimeNumbers(inputArray[0] * 1, inputArray[1] * 1); //1 ile çarptığımız da number tipine çeviriyoruz.
 console.log(process.argv.slice(2));

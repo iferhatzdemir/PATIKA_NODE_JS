@@ -1,17 +1,3 @@
-const promise1 = new Promise((resolve, reject) => {
-  resolve("Success!");
-  reject("Bağlantı hatası");
-});
-console.log(promise1);
-
-promise1
-  .then((value) => {
-    console.log(value);
-  })
-  .catch((err) => {
-    console.log(err);
-  });
-
 const books = [
   { name: "Kitap 1", author: "Yazar 1" },
   { name: "Kitap 2", author: "Yazar 2" },
@@ -27,20 +13,20 @@ const listBooks = () => {
 const addBook = (newBook) => {
   const promise1 = new Promise((resolve, reject) => {
     books.push(newBook);
-
+    resolve(books);
     //reject('BIR HATA OLUSTU');
   });
 
   return promise1;
 };
 
-addBook({ name: "Kitap 4", author: "Yazar 4" })
-  .then(() => {
-    console.log("YENI LISTE");
+async function showBooks() {
+  try {
+    await addBook({ name: "Kitap 4", author: "Yazar 4" });
     listBooks();
-  })
-  .catch((error) => {
+  } catch (error) {
     console.log(error);
-  });
+  }
+}
 
-listBooks();
+showBooks();
