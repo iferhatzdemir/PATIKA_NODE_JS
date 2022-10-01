@@ -2,22 +2,28 @@ const fs = require("fs");
 
 //Dosya Okuma
 let dataRead = (path) => {
-  fs.readFile(path, "utf8", (err, data) => {
+
+
+
+ let readResult = fs.readFileSync(path, "utf8", (err, data) => {
+
     try {
       console.log("Dosya Okundu");
       if (path.includes(".json")) {
-        let data1 = JSON.parse(data);
-        // console.log(data);
-        return data1;
+       result = data;
       } else {
-        console.log(data);
+        console.log('File not a json');
         return data;
       }
     } catch (err) {
       console.log(err);
     }
   });
+
+  return JSON.parse(readResult);
+
 };
+
 
 //Dosya Yazma
 let dataWrite = (path, data) => {
