@@ -1,6 +1,6 @@
 {
     "directoryPath": "./data",
-    "filePath": "./${directoryPath}/employee.json",
+    "filePath": "./data/employee.json",
     "updatedData":{"name": "Employee 2 Name", "salary": 4500},
     "data":{"name": "Employee 1 Name", "salary": 2000},
     "modulepath": "./Modules/"
