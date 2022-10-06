@@ -4,6 +4,7 @@ const fs = require("fs");
 let dataRead = (path) => {
   let readResult = fs.readFileSync(path, "utf8", (err, data) => {
     try {
+      console.log("Çalıştı DATAREAD");
       console.log("Dosya Okundu");
       if (path.includes(".json")) {
         result = data;
@@ -29,6 +30,7 @@ let dataWrite = (path, data) => {
     //   console.log("Dosya Yazıldı");
     // }
     try {
+      console.log("Çalıştı dataWrite");
       console.log("Dosya Yazıldı");
     } catch (err) {
       console.log(err);

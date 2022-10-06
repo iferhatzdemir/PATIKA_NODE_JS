@@ -1,7 +1,7 @@
 {
     "directoryPath": "./data",
     "filePath": "./data/employee.json",
-    "updatedData":{"name": "Employee 2 Name", "salary": 4500},
+    "updatedData":{"name": "Employee 1 Name", "salary": 47885},
     "data":{"name": "Employee 1 Name", "salary": 2000},
     "modulepath": "./Modules/"
 
